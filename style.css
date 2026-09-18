@@ -1,0 +1,1198 @@
+
+:root {
+
+    --pink: #f85db4;
+
+    --hot-pink: #ff42aa;
+
+    --soft-pink: #f8a9ca;
+
+    --blush: #ffe3ed;
+
+    --sky: #8bc6e8;
+
+    --lavender: #c7b8e9;
+
+    --white: #fffaff;
+
+    --ink: #321c36;
+
+}
+
+
+
+/* ================= RESET ================= */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--pink);
+
+    color: var(--ink);
+
+    font-family: "DM Sans", sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.hero {
+
+    min-height: 100svh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(255,255,255,.55),
+            transparent 18%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f86bb8,
+            #a7d9ef
+        );
+
+}
+
+
+
+/* ================= VIDEO ================= */
+
+.hero-video {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -3;
+
+}
+
+
+
+/* Capa de color encima del video */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255,255,255,.5),
+            transparent 16%
+        ),
+
+        linear-gradient(
+            115deg,
+            rgba(248,93,180,.75),
+            rgba(133,190,226,.55)
+        );
+
+    mix-blend-mode: screen;
+
+}
+
+
+
+/* Oscurecimiento ligero */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            rgba(30,10,40,.14),
+            transparent 45%,
+            rgba(255,76,170,.3)
+        ),
+
+        radial-gradient(
+            circle at center,
+            transparent 20%,
+            rgba(70,20,80,.12)
+        );
+
+}
+
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.nav {
+
+    width: min(
+        1200px,
+        calc(100% - 64px)
+    );
+
+    margin: auto;
+
+    padding: 30px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: white;
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+
+.logo {
+
+    font-size: .78rem;
+
+    letter-spacing: .22em;
+
+    font-weight: 500;
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    gap: 30px;
+
+    font-size: .75rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: .12em;
+
+}
+
+
+.nav-links a {
+
+    opacity: .88;
+
+    transition:
+        opacity .2s,
+        transform .2s;
+
+}
+
+
+.nav-links a:hover {
+
+    opacity: 1;
+
+    transform: translateY(-2px);
+
+}
+
+
+
+/* =====================================================
+   HERO CONTENT
+   ===================================================== */
+
+.hero-content {
+
+    width: min(
+        1200px,
+        calc(100% - 64px)
+    );
+
+    margin: 0 auto;
+
+    min-height: calc(100svh - 90px);
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    color: white;
+
+    padding-bottom: 5vh;
+
+}
+
+
+.eyebrow {
+
+    margin-bottom: 22px;
+
+    font-size: .68rem;
+
+    letter-spacing: .25em;
+
+    font-weight: 500;
+
+}
+
+
+h1,
+h2,
+blockquote {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-weight: 400;
+
+}
+
+
+h1 {
+
+    font-size:
+        clamp(
+            4rem,
+            9vw,
+            9rem
+        );
+
+    line-height: .86;
+
+    letter-spacing: -.055em;
+
+    max-width: 900px;
+
+    text-shadow:
+        0 8px 35px
+        rgba(80,15,70,.16);
+
+}
+
+
+h1 em {
+
+    font-weight: 400;
+
+}
+
+
+.hero-text {
+
+    max-width: 430px;
+
+    line-height: 1.65;
+
+    font-size: .95rem;
+
+    margin: 32px 0;
+
+}
+
+
+.hero-button {
+
+    width: fit-content;
+
+    padding: 14px 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.7);
+
+    border-radius: 999px;
+
+    color: white;
+
+    font-size: .73rem;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+
+    backdrop-filter: blur(8px);
+
+    background:
+        rgba(255,255,255,.12);
+
+    transition: .25s ease;
+
+}
+
+
+.hero-button span {
+
+    margin-left: 18px;
+
+    font-size: 1rem;
+
+}
+
+
+.hero-button:hover {
+
+    background: white;
+
+    color: var(--hot-pink);
+
+    transform: translateY(-3px);
+
+}
+
+
+.scroll {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: white;
+
+    font-size: .6rem;
+
+    letter-spacing: .2em;
+
+}
+
+
+.scroll span {
+
+    margin-left: 8px;
+
+}
+
+
+
+/* =====================================================
+   DESTELLOS
+   ===================================================== */
+
+.hero::after {
+
+    content:
+        "✦     ˚     ✧          ·        ✦       ˚";
+
+    position: absolute;
+
+    top: 22%;
+
+    right: 8%;
+
+    color:
+        rgba(255,255,255,.82);
+
+    font-size: 20px;
+
+    letter-spacing: 20px;
+
+    animation:
+        floating 8s ease-in-out infinite;
+
+}
+
+
+@keyframes floating {
+
+    50% {
+
+        transform:
+            translateY(-14px);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   INTRO
+   ===================================================== */
+
+.intro {
+
+    background: var(--blush);
+
+    padding:
+        140px
+        max(32px, 8vw);
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10vw;
+
+    align-items: end;
+
+}
+
+
+.section-label {
+
+    color: #a65b87;
+
+    margin-bottom: 25px;
+
+    font-size: .68rem;
+
+    letter-spacing: .25em;
+
+    font-weight: 500;
+
+}
+
+
+.intro h2,
+.closing h2 {
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            6rem
+        );
+
+    line-height: .9;
+
+    letter-spacing: -.045em;
+
+}
+
+
+.intro-copy {
+
+    max-width: 500px;
+
+    line-height: 1.8;
+
+    font-size: .96rem;
+
+    color: #69485f;
+
+}
+
+
+
+
+/* =====================================================
+   LOTUS
+   ===================================================== */
+
+.card-lotus {
+
+    grid-column: span 5;
+
+    grid-row: span 2;
+
+}
+
+
+.card-lotus::before {
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            #a9e0ef 0 8%,
+            transparent 9%
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            #ffd1e4 0 20%,
+            transparent 21%
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            #f291bd 0 38%,
+            transparent 39%
+        ),
+
+        linear-gradient(
+            145deg,
+            #9ad1e7,
+            #f5a5c8
+        );
+
+}
+
+
+.card-lotus .orb {
+
+    width: 160px;
+
+    height: 160px;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 35%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+
+        radial-gradient(
+            circle,
+            white 0 4%,
+            rgba(255,255,255,.5) 5% 13%,
+            transparent 45%
+        );
+
+    filter: blur(2px);
+
+}
+
+
+
+/* =====================================================
+   LIGHT
+   ===================================================== */
+
+.card-light {
+
+    grid-column: span 3;
+
+    grid-row: span 2;
+
+}
+
+
+.card-light::before {
+
+    background:
+
+        radial-gradient(
+            circle,
+            #fff 0 2%,
+            #ffd67e 4%,
+            transparent 24%
+        ),
+
+        linear-gradient(
+            160deg,
+            #b9e2ef,
+            #f7b6d6
+        );
+
+}
+
+
+.light-star {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: white;
+
+    font-size: 70px;
+
+    text-shadow:
+        0 0 30px white,
+        0 0 70px #fff;
+
+}
+
+
+
+/* =====================================================
+   WINGS
+   ===================================================== */
+
+.card-wing {
+
+    grid-column: span 4;
+
+    grid-row: span 2;
+
+}
+
+
+.card-wing::before {
+
+    background:
+
+        radial-gradient(
+            ellipse at 52% 45%,
+            rgba(255,255,255,.95) 0 7%,
+            transparent 8%
+        ),
+
+        repeating-linear-gradient(
+            70deg,
+            transparent 0 14px,
+            rgba(255,211,231,.72) 15px 25px,
+            transparent 26px 37px
+        ),
+
+        linear-gradient(
+            135deg,
+            #75b4d8,
+            #e9b8d6
+        );
+
+}
+
+
+.wing-shape {
+
+    position: absolute;
+
+    width: 80%;
+
+    height: 60%;
+
+    top: 18%;
+
+    left: 10%;
+
+    border-radius:
+        100% 10% 100% 10%;
+
+    transform: rotate(-22deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.7),
+            transparent
+        );
+
+}
+
+
+
+/* =====================================================
+   CLOUD
+   ===================================================== */
+
+.card-cloud {
+
+    grid-column: span 7;
+
+    grid-row: span 2;
+
+}
+
+
+.card-cloud::before {
+
+    background:
+
+        radial-gradient(
+            circle at 25% 70%,
+            #fff5f9 0 8%,
+            transparent 9%
+        ),
+
+        radial-gradient(
+            circle at 40% 55%,
+            #fff8fb 0 14%,
+            transparent 15%
+        ),
+
+        radial-gradient(
+            circle at 62% 63%,
+            #fff 0 17%,
+            transparent 18%
+        ),
+
+        linear-gradient(
+            160deg,
+            #c9b9e7,
+            #f2a6c9 55%,
+            #8fc4e2
+        );
+
+}
+
+
+.cloud {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            ellipse at 55% 25%,
+            rgba(255,255,255,.55),
+            transparent 25%
+        );
+
+}
+
+
+
+/* =====================================================
+   WATER
+   ===================================================== */
+
+.card-water {
+
+    grid-column: span 5;
+
+    grid-row: span 2;
+
+}
+
+
+.card-water::before {
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 65%,
+            rgba(255,255,255,.95) 0 4%,
+            transparent 5%
+        ),
+
+        repeating-radial-gradient(
+            ellipse at 50% 65%,
+            rgba(255,255,255,.5) 0 2px,
+            transparent 3px 22px
+        ),
+
+        linear-gradient(
+            150deg,
+            #83bfd7,
+            #dba4c5
+        );
+
+}
+
+
+
+/* =====================================================
+   MAGIC
+   ===================================================== */
+
+.card-fairy {
+
+    grid-column: span 4;
+
+    grid-row: span 2;
+
+}
+
+
+.card-fairy::before {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,255,255,.9),
+            transparent 15%
+        ),
+
+        linear-gradient(
+            135deg,
+            #eab3d0,
+            #8cc8e2
+        );
+
+}
+
+
+.fairy {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: white;
+
+    font-size: 110px;
+
+    filter:
+        drop-shadow(
+            0 0 25px white
+        );
+
+}
+
+
+
+/* =====================================================
+   QUOTE
+   ===================================================== */
+
+.quote {
+
+    min-height: 80vh;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,255,255,.8),
+            transparent 16%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f991c1,
+            #b9dff0
+        );
+
+    padding:
+        120px 8vw;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+.quote .section-label {
+
+    color: white;
+
+}
+
+
+blockquote {
+
+    font-size:
+        clamp(
+            3rem,
+            7vw,
+            7rem
+        );
+
+    line-height: .94;
+
+    letter-spacing: -.05em;
+
+    color: white;
+
+    text-shadow:
+        0 5px 35px
+        rgba(75,32,80,.15);
+
+}
+
+
+.lotus-symbol {
+
+    margin-top: 45px;
+
+    color: white;
+
+    font-size: 3rem;
+
+}
+
+
+
+/* =====================================================
+   CLOSING
+   ===================================================== */
+
+.closing {
+
+    background: var(--hot-pink);
+
+    color: white;
+
+    min-height: 75vh;
+
+    padding:
+        130px
+        max(32px, 8vw);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.closing .section-label {
+
+    color: #ffd5ea;
+
+}
+
+
+.closing h2 {
+
+    margin-bottom: 45px;
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+
+    background: #df3291;
+
+    color: #ffd6eb;
+
+    padding:
+        24px
+        max(32px, 8vw);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: .58rem;
+
+    letter-spacing: .17em;
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE / CELULAR
+   ===================================================== */
+
+@media (max-width: 760px) {
+
+
+    .nav,
+    .hero-content {
+
+        width:
+            min(
+                100% - 36px,
+                1200px
+            );
+
+    }
+
+
+    .nav-links {
+
+        gap: 13px;
+
+        font-size: .58rem;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            clamp(
+                3.4rem,
+                17vw,
+                6rem
+            );
+
+    }
+
+
+    .hero-text {
+
+        font-size: .86rem;
+
+        max-width: 330px;
+
+    }
+
+
+    .intro {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 90px;
+
+        padding-bottom: 90px;
+
+        gap: 45px;
+
+    }
+
+
+    .gallery {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        grid-auto-rows: 190px;
+
+    }
+
+
+    .gallery-card {
+
+        grid-column: span 1 !important;
+
+        grid-row: span 1 !important;
+
+    }
+
+
+    .gallery-card:first-child,
+    .card-cloud {
+
+        grid-column:
+            span 2 !important;
+
+    }
+
+
+    .gallery-section {
+
+        padding-bottom: 90px;
+
+    }
+
+
+    .quote {
+
+        min-height: 65vh;
+
+        padding:
+            90px 25px;
+
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+}
+
+/* =====================================================
+   SECCIÓN: MA PRÉSENTATION
+   ===================================================== */
+.presentation-section {
+    background: var(--blush);
+    padding: 0 max(32px, 8vw) 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presentation-header {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 40px;
+}
+
+.presentation-header h2 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: .95;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(50, 28, 54, 0.12);
+    border: 4px solid var(--white);
+    background: #000;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    outline: none;
+}
